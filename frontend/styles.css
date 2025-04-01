@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tools {
+    display: flex;
+    gap: 10px;
+}
+
+button, select {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button.danger {
+    background-color: #dc3545;
+}
+
+button.success {
+    background-color: #28a745;
+}
+
+.delete-shot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 4px 8px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.shot-container:hover .delete-shot {
+    opacity: 1;
+}
+
+select {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.scene-container {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ddd;
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.json-editor {
+    height: 600px;
+}
+
+#jsonInput {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+    background-color: #f8f8f8;
+}
+
+.shots-panel {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.shots-panel h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#shotsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shot-container {
+    position: relative;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.shot-container.current-shot {
+    border-color: #28a745;
+}
+
+.shot-thumbnail {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.shot-thumbnail:hover {
+    transform: scale(1.02);
+}
